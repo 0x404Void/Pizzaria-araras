@@ -1,0 +1,52 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+h1 {
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    background: #fff5e6;
+}
+
+.produtos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.produto {
+    border: 5px solid #ccc;
+    padding: 15px;
+    width: 200px;
+    background: white;
+    border-radius: 12px;
+}
+
+.produtos button {
+    background: rgb(29, 114, 17);
+}
+
+button {
+    padding: 8px;
+    cursor: pointer;
+    background: #08681d;
+    color: white;
+    border-radius: 10px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+li button {
+    margin-left: 10px;
+    padding: 4px 8px;
+    font-size: 12px;
+    background: red;
+}
