@@ -6,7 +6,7 @@ h1 {
     padding: 20px;
     background-color: black;
     color: white;
-
+    border-radius: 15px;
 }
 
 
@@ -24,11 +24,23 @@ body {
 }
 
 .produto {
+    background-size: #ffffff;
     border: 5px solid #ccc;
     padding: 15px;
     width: 200px;
     background: white;
     border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+    overflow: hidden;
+}
+
+.produto:hover {
+    transform: translateY(-15px);
+}
+
+.produto button:hover {
+    background-color: #0f421a;
 }
 
 .produto img {
@@ -42,6 +54,7 @@ body {
 
 .produtos button {
     background: rgb(29, 114, 17);
+    transition: 0.3s;
 }
 
 button {
@@ -160,5 +173,32 @@ li button {
     font-size: 12px;
     background: red;
 }
+
+.pizza-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 100px;
+    text-align: center;
+}
+
+.pizza-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.pizza-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+
 
 
