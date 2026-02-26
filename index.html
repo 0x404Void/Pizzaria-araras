@@ -8,55 +8,65 @@
 </head>
 <body>
     
+    <div class="icone-carrinho" onclick="toggleCarrinho()">
+        🛒 <span id="contador">0</span>
+    </div>
+
+    <div id="painel-carrinho" class="painel">
+        <h2>Seu Carrinho</h2>
+
+        <ul id="carrinho"></ul>
+
+        <p><strong>Total: R$ <span id="total">0</span></strong></p>
+
+        <button onclick="finalizarpedido()">Finalizar no whatsApp</button>
+    </div>
+
+
     <h1>Pizzaria do victor</h1>
 
     <div class="produtos">
 
         <div class="produto">
             <h3>Pizza Calabresa</h3>
-            <p>R$ 40,00</p>
-            <button onclick="adicionar('Pizza Calabresa', 40)">Adicionar</button>
+            <p>R$ 40,99</p>
+            <button onclick="adicionar('Pizza Calabresa', 40.99)">Adicionar</button>
         </div>
 
         <div class="produto">
             <h3>Pizza de Frango</h3>
-            <p>R$ 39,00</p>
-            <button onclick="adicionar('Pizza de Frango', 39)">Adicionar</button>
+            <p>R$ 39,99</p>
+            <button onclick="adicionar('Pizza de Frango', 39.99)">Adicionar</button>
         </div>
         <div class="produto">
             <h3>Pizza de Bacon</h3>
             <p>R$ 39,99</p>
-            <button onclick="adicionar('Pizza de Bacon', 39,99)">Adicionar</button>
+            <button onclick="adicionar('Pizza de Bacon', 39.99)">Adicionar</button>
         </div>
         <div class="produto">
             <h3>Pizza Portuguesa</h3>
             <p>R$ 38,99</p>
-            <button onclick="adicionar('Pizza Portuguesa', 38,99)">Adicionar</button>
+            <button onclick="adicionar('Pizza Portuguesa', 38.99)">Adicionar</button>
         </div>
         <div class="produto">
             <h3>Pizza de Queijo</h3>
             <p>R$ 39,99</p>
-            <button onclick="adicionar('Pizza de QUeijo', 39,99)">Adicionar</button>
+            <button onclick="adicionar('Pizza de Queijo', 39.99)">Adicionar</button>
         </div>
         <div class="produto">
-            <h3>Pizza de Mussarela</h3>
+            <h3>Pizza Mussarela</h3>
             <p>R$ 37,99</p>
-            <button onclick="adicionar('Pizza de Mussarela', 37,99)">Adicionar</button>
+            <button onclick="adicionar('Pizza Mussarela', 37.99)">Adicionar</button>
         </div>
         <div class="produto">
             <h3>Pizza Vegetariana</h3>
             <p>R$ 35,99</p>
-            <button onclick="adicionar('Pizza Vegetariana', 35,99)">Adicionar</button>
+            <button onclick="adicionar('Pizza Vegetariana', 35.99)">Adicionar</button>
         </div>
 
     </div>
-
-    <h2>Carrinho</h2>
-    <ul id="carrinho"></ul>
-
-    <p><strong>Total: R$ <span id="total">0</span></strong></p>
-
-    <button onclick="finalizarpedido()">Finalizar no WhatsApp</button>
+    
+    <div id="overlay" onclick="toggleCarrinho()"></div>
 
     <script src="script.js"></script>
 
