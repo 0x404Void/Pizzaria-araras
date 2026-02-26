@@ -98,5 +98,5 @@ function finalizarpedido() {
 
 document.addEventListener("DOMContentLoaded", function () {
     atualizarCarrinho();
-    atualizaContador();
+    atualizarContador();
 });
