@@ -1,5 +1,25 @@
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
+function aumentar(index) {
+  carrinho[index].quantidade += 1;
+
+  salvarCarrinho();
+  atualizarCarrinho();
+  atualizarContador();
+}
+
+function diminuir(index) {
+  if (carrinho[index].quantidade > 1) {
+    carrinho[index].quantidade -= 1;
+  } else {
+    carrinho.splice(index, 1);
+  }
+
+  salvarCarrinho();
+  atualizarCarrinho();
+  atualizarContador();
+}
+
 
 function salvarCarrinho() {
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
@@ -13,11 +33,19 @@ function toggleCarrinho() {
     overlay.classList.toggle("ativo");
 }
 
-function adicionar(nome, preco) {
+function adicionar(nome, preco, imagem) {
+  const itemExistente = carrinho.find(item => item.nome === nome);
+
+  if (itemExistente) {
+    itemExistente.quantidade +=1;
+  } else {
   carrinho.push({
     nome: nome,
-    preco: Number(preco)
+    preco: Number(preco),
+    imagem: imagem,
+    quantidade: 1
   });
+  }
 
   salvarCarrinho();
   atualizarCarrinho();
@@ -34,34 +62,55 @@ function remover(index) {
 }
 
 function atualizarCarrinho() {
-  let lista = document.getElementById("carrinho");
-  lista.innerHTML = "";
 
-  let total = 0;
+    let lista = document.getElementById("carrinho");
+    lista.innerHTML = "";
 
-  carrinho.forEach((produto, index) => {
+    let total = 0;
 
-    total += Number(produto.preco);
+    carrinho.forEach((produto, index) => {
 
-    let li = document.createElement("li");
+      let subtotal = produto.preco * produto.quantidade;
+      total += subtotal;
 
-    li.innerHTML = `
-      ${produto.nome} - R$ ${Number(produto.preco).toFixed(2)}
-      <button onclick="remover(${index})">remover</button>
-    `;
+        let li = document.createElement("li");
 
-    lista.appendChild(li);
-  });
+        li.innerHTML = `
+          <div class="item-carrinho">
+                <img src="${produto.imagem}" class="img-carrinho">
+                <div class="info-item">
+                    <p class="nome-item">${produto.nome}</p>
+                    <p>Quantidade: x${produto.quantidade}</p>
+                    <p class="preco-item">
+                        R$ ${subtotal.toFixed(2)}
+                    </p>
+                </div>
 
-  document.getElementById("total").innerText = total.toFixed(2);
+                <div class="acoes">
+                <button onclick="diminuir(${index})">➖</button>
+                <button onclick="aumentar(${index})">➕</button>
+                <button onclick="remover(${index})">❌</button>
+            </div>
+        </div>
+        `;
+
+        lista.appendChild(li);
+
+    });
+
+    document.getElementById("total").innerText = total.toFixed(2);
 }
 
 function atualizarContador() {
-    const contador = document.getElementById("contador");
+    let contador = document.getElementById("contador");
 
-    if (contador) {
-        contador.innerText = carrinho.length;
-    }
+    let totalItens = 0;
+
+    carrinho.forEach(item => {
+      totalItens += item.quantidade;
+    });
+
+    contador.innerText = totalItens;
 }
 
 function animarContador() {

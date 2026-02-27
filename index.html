@@ -15,11 +15,14 @@
     <div id="painel-carrinho" class="painel">
         <h2>Seu Carrinho</h2>
 
-        <ul id="carrinho"></ul>
+        <div class="area-itens">
+            <ul id="carrinho"></ul>
+        </div>
 
-        <p><strong>Total: R$ <span id="total">0</span></strong></p>
-
-        <button onclick="finalizarpedido()">Finalizar no whatsApp</button>
+        <div class="area-finalizar">
+            <p><strong>Total: R$ <span id="total">0</span></strong></p>
+            <button onclick="finalizarpedido()">Finalizar no whatsApp</button>
+        </div>
     </div>
 
 
@@ -30,60 +33,109 @@
     <div class="produtos">
 
         <div class="produto">
+            <span class="promo-tag">PROMO</span>
+
             <div class="pizza-card"></div>
             <img src="img/calabresa.jpg.jpg">
             <h3>Pizza Calabresa</h3>
-            <p>R$ 40,99</p>
-            <button onclick="adicionar('Pizza Calabresa', 40.99)">Adicionar</button>
+
+             <p class="preco">
+             <span class="preco-antigo">R$ 45,99</span>
+             <span class="preco-atual">R$ 40,99</span>
+             </p>   
+
+            <button onclick="adicionar('Pizza Calabresa', 40.99, 'img/calabresa.jpg.jpg')">Adicionar</button>
         </div>
 
         <div class="produto">
+            <span class="promo-tag">PROMO</span>
+
             <div class="pizza-card"></div>
             <img src="img/frango.jpg.jpg">
             <h3>Pizza de Frango</h3>
-            <p>R$ 39,99</p>
-            <button onclick="adicionar('Pizza de Frango', 39.99)">Adicionar</button>
+
+            <p class="preco">
+                <span class="preco-antigo">R$ 40,99</span>
+                <span class="preco-atual">R$ 38,99</span>
+            </p>
+
+            <button onclick="adicionar('Pizza de Frango', 38.99, 'img/frango.jpg.jpg')">Adicionar</button>
         </div>
         <div class="produto">
+            <span class="promo-tag">PROMO</span>
+
             <div class="pizza-card"></div>
             <img src="img/bacon.jpg.webp">
             <h3>Pizza de Bacon</h3>
-            <p>R$ 39,99</p>
-            <button onclick="adicionar('Pizza de Bacon', 39.99)">Adicionar</button>
+
+            <p class="preco">
+                <span class="preco-antigo">R$ 41,99</span>
+                <span class="preco-atual">R$ 37,99</span>
+            </p>
+            <button onclick="adicionar('Pizza de Bacon', 37.99, 'img/bacon.jpg.webp')">Adicionar</button>
         </div>
         <div class="produto">
+            <span class="promo-tag">PROMO</span>
+
             <div class="pizza-card"></div>
             <img src="img/portuguesa.jpg.jpg">
             <h3>Pizza Portuguesa</h3>
-            <p>R$ 38,99</p>
-            <button onclick="adicionar('Pizza Portuguesa', 38.99)">Adicionar</button>
+
+            <p class="preco">
+                <span class="preco-antigo">R$ 40,99</span>
+                <span class="preco-atual">R$ 38,99</span>
+            </p>
+
+            <button onclick="adicionar('Pizza Portuguesa', 38.99, 'img/portuguesa.jpg.jpg')">Adicionar</button>
         </div>
         <div class="produto">
+            <span class="promo-tag">PROMO</span>
+
             <div class="pizza-card"></div>
             <img src="img/queijo.jpg.jpg">
             <h3>Pizza de Queijo</h3>
-            <p>R$ 39,99</p>
-            <button onclick="adicionar('Pizza de Queijo', 39.99)">Adicionar</button>
+
+            <p class="preco">
+                <span class="preco-antigo">R$ 40,99</span>
+                <span class="preco-atual">R$ 37,99</span>
+            </p>
+
+            <button onclick="adicionar('Pizza de Queijo', 37.99, 'img/queijo.jpg.jpg')">Adicionar</button>
         </div>
         <div class="produto">
+            <span class="promo-tag">PROMO</span>
+
             <div class="pizza-card"></div>
             <img src="img/mussarela.lpg.jpg">
             <h3>Pizza Mussarela</h3>
-            <p>R$ 37,99</p>
-            <button onclick="adicionar('Pizza Mussarela', 37.99)">Adicionar</button>
+
+            <p class="preco">
+                <span class="preco-antigo">R$ 40,99</span>
+                <span class="preco-atual">R$ 37,99</span>
+            </p>
+
+            <button onclick="adicionar('Pizza Mussarela', 37.99, 'img/mussarela.lpg.jpg')">Adicionar</button>
         </div>
         <div class="produto">
+            <span class="promo-tag">PROMO</span>
+
             <div class="pizza-card"></div>
             <img src="img/vegetariana.jpg.webp">
             <h3>Pizza Vegetariana</h3>
-            <p>R$ 35,99</p>
-            <button onclick="adicionar('Pizza Vegetariana', 35.99)">Adicionar</button>
+
+            <p class="preco">
+                <span class="preco-antigo">R$ 38,99</span>
+                <span class="preco-atual">R$ 35,99 </span>
+            </p>
+
+            <button onclick="adicionar('Pizza Vegetariana', 35.99, 'img/vegetariana.jpg.webp')">Adicionar</button>
         </div>
         </div>
 
     </div>
-    
+
     <div id="overlay" onclick="toggleCarrinho()"></div>
+ 
 
     <script src="script.js"></script>
 
