@@ -7,13 +7,20 @@
     <title>Pizzaria</title>
 </head>
 <body>
-    
+
     <div class="icone-carrinho" onclick="toggleCarrinho()">
         🛒 <span id="contador">0</span>
     </div>
 
     <div id="painel-carrinho" class="painel">
-        <h2>Seu Carrinho</h2>
+
+        <div class="topo-painel">
+            <h2>Seu Carrinho</h2>
+        </div>
+
+            <div class="icone-carrinho" onclick="toggleCarrinho()">
+        🛒 <span id="contador">0</span>
+    </div>
 
         <div class="area-itens">
             <ul id="carrinho"></ul>
@@ -23,6 +30,7 @@
             <p><strong>Total: R$ <span id="total">0</span></strong></p>
             <button onclick="finalizarpedido()">Finalizar no whatsApp</button>
         </div>
+
     </div>
 
 

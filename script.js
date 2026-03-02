@@ -87,9 +87,12 @@ function atualizarCarrinho() {
                 </div>
 
                 <div class="acoes">
-                <button onclick="diminuir(${index})">➖</button>
-                <button onclick="aumentar(${index})">➕</button>
-                <button onclick="remover(${index})">❌</button>
+                <button onclick="diminuir(${index})">-</button>
+                <button onclick="aumentar(${index})">+</button>
+                
+                <div class="button-red">
+                <button onclick="remover(${index})">x</button>
+                </div>
             </div>
         </div>
         `;
